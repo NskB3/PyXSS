@@ -20,7 +20,7 @@ def args():
   global args
   parser = argparse.ArgumentParser()
   parser.add_argument('-u', '--url', help="URL To Scan")
-  parser.add_argument('-f' '--form', help="Input Form's Name")
+  parser.add_argument('-f', '--form', help="Input Form's Name")
   args = parser.parse_args()
 def test():
   global br
@@ -50,6 +50,8 @@ def test():
       r = None
       r = br.submit()
       print "Injected code: " + code + " URL: " + str(r.geturl())
+      print "[NOTE]: This Technique doesn't always work, some websites filter some characters."
+      print "Thanks for using PyXSS."
     if yorn == 'N' or 'n':
       print "Okay, Quitting tool..."
       time.sleep(2)
