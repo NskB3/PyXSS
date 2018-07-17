@@ -25,6 +25,10 @@ def args():
 def test():
   global br
   br = mechanize.Browser() 
+  br.addheaders = [
+    ('User-agent',
+     'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11)Gecko/20071127 Firefox/2.0.0.11')
+] 
   br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
   br.set_handle_robots(False)
   br.set_handle_equiv(True)
@@ -33,7 +37,7 @@ def test():
   br.select_form(nr=0)
   br.form[str(args.form)] = text
   r = br.submit()
-  if (text in r.geturl()):
+  if (text in br.response().read()):
     print "XSS Vulnerability Found!"
     print "Would You Like To Inject a Script In the Site?"
     yorn = raw_input("Y/N: ")
