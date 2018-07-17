@@ -22,7 +22,7 @@ def args():
   parser.add_argument('-u', '--url', help="URL To Scan")
   parser.add_argument('-f' '--form', help="Input Form's Name")
   args = parser.parse_args()
-def test()
+def test():
   global br
   br = mechanize.Browser() 
   br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
