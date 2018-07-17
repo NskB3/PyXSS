@@ -29,9 +29,9 @@ def test():
   br.set_handle_robots(False)
   br.set_handle_equiv(True)
   text = "TESTING_FOR_XSS"
-  br.open(args.url)
+  br.open(str(args.url))
   br.select_form(nr=0)
-  br.form[args.form] = text
+  br.form[str(args.form)] = text
   r = br.submit()
   if (text in r.geturl()):
     print "XSS Vulnerability Found!"
@@ -40,9 +40,9 @@ def test():
     if yorn == 'Y' or 'y':
       br.open('http://www.google.com')
       code = raw_input("Enter Code: ")
-      br.open(args.url)
+      br.open(str(args.url))
       br.select_form(nr=0)
-      br.form[args.form] = text
+      br.form[str(args.form)] = text
       r = None
       r = br.submit()
       print "Injected code: " + code + " URL: " + str(r.geturl())
