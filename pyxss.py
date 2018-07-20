@@ -37,7 +37,7 @@ def test():
   br.select_form(nr=0)
   br.form[str(args.form)] = text
   r = br.submit()
-  if (text in br.response().read()):
+  if (text in r.geturl()):
     print "XSS Vulnerability Found!"
     print "Would You Like To Inject a Script In the Site?"
     yorn = raw_input("Y/N: ")
@@ -52,6 +52,9 @@ def test():
       print "Injected code: " + code + "\nURL: " + str(r.geturl())
       print "[NOTE]: This Technique doesn't always work\nsome websites filter some characters."
       print "\nThanks for using PyXSS."
+    if (text not in r.geturl()):
+      print "XSS Tested, Website is secure."
+      quit()
     if yorn == 'N' or 'n':
       print "Quitting tool..."
       time.sleep(3)
