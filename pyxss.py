@@ -52,6 +52,7 @@ def test():
       print "Injected code: " + code + "\nURL: " + str(r.geturl())
       print "[NOTE]: This Technique doesn't always work\nsome websites filter some characters."
       print "\nThanks for using PyXSS."
+      quit() 
     if (text not in r.geturl()):
       print "XSS Tested, Website is secure."
       quit()
