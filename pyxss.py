@@ -49,12 +49,12 @@ def test():
       br.form[str(args.form)] = text
       r = None
       r = br.submit()
-      print "Injected code: " + code + " URL: " + str(r.geturl())
-      print "[NOTE]: This Technique doesn't always work, some websites filter some characters."
-      print "Thanks for using PyXSS."
+      print "Injected code: " + code + "\nURL: " + str(r.geturl())
+      print "[NOTE]: This Technique doesn't always work\nsome websites filter some characters."
+      print "\nThanks for using PyXSS."
     if yorn == 'N' or 'n':
-      print "Okay, Quitting tool..."
-      time.sleep(2)
+      print "Quitting tool..."
+      time.sleep(3)
       quit()
 def main():
   banner()
