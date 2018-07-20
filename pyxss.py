@@ -46,7 +46,7 @@ def test():
       code = raw_input("Enter Code: ")
       br.open(str(args.url))
       br.select_form(nr=0)
-      br.form[str(args.form)] = text
+      br.form[str(args.form)] = code
       r = None
       r = br.submit()
       print "Injected code: " + code + "\nURL: " + str(r.geturl())
