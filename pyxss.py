@@ -38,7 +38,7 @@ def test():
   br.form[str(args.form)] = text
   r = br.submit()
   if (text in r.read()):
-    print "XSS Vulnerability Found!"
+    print "Possible XSS Vulnerability Found!"
     print "Would You Like To Inject a Script In the Site?"
     yorn = raw_input("Y/N: ")
     if yorn == 'Y' or 'y':
