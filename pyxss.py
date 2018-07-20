@@ -57,7 +57,7 @@ def test():
       print "Quitting.." 
       time.sleep(1)
       quit() 
- if (text not in r.read()):
+  if (text not in r.read()):
       print "XSS Tested, Website is secure."
       quit()
     if yorn == 'N' or 'n':
