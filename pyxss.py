@@ -53,6 +53,10 @@ def test():
       print "[NOTE]: This Technique doesn't always work\nsome websites filter some characters."
       print "\nThanks for using PyXSS."
       quit() 
+    else:
+      print "Quitting.." 
+      time.sleep(1)
+      quit() 
     if (text not in r.geturl()):
       print "XSS Tested, Website is secure."
       quit()
