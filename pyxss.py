@@ -60,10 +60,10 @@ def test():
   if (text not in r.read()):
       print "XSS Tested, Website is secure."
       quit()
-    if yorn == 'N' or 'n':
-      print "Quitting tool..."
-      time.sleep(3)
-      quit()
+
+
+
+
 def main():
   banner()
   args()
